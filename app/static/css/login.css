@@ -1,0 +1,107 @@
+/* login.css */
+body {
+    background: linear-gradient(180deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.input-group {
+    position: relative;
+}
+
+#togglePassword {
+    background-color: #007bff;
+    color: #fff; /* Cor do texto ajustada para visibilidade */
+}
+
+#togglePassword:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff; /* Cor de fundo */
+    border: 1px solid #0056b3; /* Adiciona uma borda */
+    padding: 5px; /* Adiciona preenchimento */
+    color: white; /* Muda a cor do texto para branco */
+    cursor: pointer;
+    border-radius: 5px; /* Borda arredondada para um visual mais agradável */
+}
+
+
+#togglePassword:hover {
+    color: #0056b3;
+}
+
+#togglePassword:focus {
+    outline: none;
+}
+
+#togglePassword i {
+    font-size: 1.2em; /* Ajusta o tamanho do ícone */
+}
+
+
+.login-container, .forgot-password-container, .register-container {
+    width: 90%; /* Ajuste para telas menores */
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container img {
+    width: 100px;
+    margin-bottom: 20px;
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    border: 2px solid #007bff; /* Adiciona uma borda arredondada */
+}
+
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.form-text {
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.form-check-label {
+    font-weight: normal;
+}

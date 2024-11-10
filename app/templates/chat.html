@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <!-- Script para o JavaScript -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <!-- Título da página -->
+    <title>Simulação ChatGPT</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/ChatBot.jpg') }}" type="image/png">
+</head>
+
+<body>
+
+    <!-- Botão para abrir/fechar o histórico -->
+    <button id="toggleSidebar" onclick="toggleSidebar()">Toggle Sidebar</button>
+    <div class="sidebar" id="sidebar">
+        <!-- Conteúdo da sidebar -->
+
+
+
+        <!-- Sidebar para histórico de conversas -->
+        <div class="sidebar" id="sidebar">
+            <!-- Adicionando o logotipo -->
+            <img src="{{ url_for('static', filename='images/ChatBot.jpg') }}" alt="ChatBot" class="ChatBot">
+
+            <h2>Histórico de Conversas</h2>
+            <ul>
+                <li>Conversa 1</li>
+                <li>Conversa 2</li>
+                <li>Conversa 3</li>
+                <!-- Adicione mais conversas aqui -->
+            </ul>
+        </div>
+    </div>
+    <!-- Área de chat -->
+    <div class="chat-container">
+        <div class="chat-window">
+            <!-- As mensagens aparecerão aqui -->
+        </div>
+
+        <!-- Indicador de carregamento -->
+        <div class="loading" id="loading" style="display: none;">Enviando...</div>
+
+        <!-- Input para enviar mensagem -->
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Digite sua mensagem..."
+                onkeypress="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            const loading = document.getElementById('loading');
+            loading.style.display = 'block';
+
+            // Simulação de tempo de processamento
+            setTimeout(() => {
+                loading.style.display = 'none';
+                // Lógica para exibir a mensagem do usuário
+                const chatWindow = document.querySelector('.chat-window');
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('user-message');
+                userMessage.innerText = userInput;
+                chatWindow.appendChild(userMessage);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+                document.getElementById('user-input').value = ''; // Limpa o campo
+            }, 1000);
+        }
+    </script>
+
+</body>
+
+</html>
